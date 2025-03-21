@@ -1,50 +1,64 @@
-معرفی پروژه
-این پروژه یک API تحت وب با استفاده از ASP.NET Core طراحی شده است که تمامی ویژگی‌های ضروری برای مدیریت احراز هویت، لاگین و ثبت‌نام کاربران، و مدیریت توکن‌های امنیتی را پوشش می‌دهد. این پروژه شامل موارد زیر است:
+# **Project: Authentication and API Management System with ASP.NET Core**
 
-احراز هویت با ASP.NET Identity: مدیریت کاربران و نقش‌ها با استفاده از Identity Framework.
-توکن‌های JWT (Json Web Token): ایجاد توکن‌های دسترسی (Access Token) و توکن‌های رفرش (Refresh Token) برای احراز هویت کاربران.
-مدیریت توکن‌های رفرش: ذخیره‌سازی و اعتبارسنجی توکن‌های رفرش در پایگاه داده.
-لیست بلاک توکن‌ها: امکان بلاک کردن توکن‌های نامعتبر یا منقضی.
-لاگین و ثبت‌نام: امکان لاگین و ثبت‌نام کاربران با اعتبارسنجی قوی.
-مستندسازی API با Swagger: ارائه مستندات کامل و تعاملی برای API با استفاده از Swagger.
-آزمایش API با RestSharp: امکان تست و مصرف API با استفاده از کتابخانه RestSharp.
-ویژگی‌های کلیدی
-1. احراز هویت و مدیریت کاربران
-استفاده از ASP.NET Identity برای مدیریت کاربران، نقش‌ها و هش‌کردن رمز عبور.
-امکان لاگین و ثبت‌نام کاربران با اعتبارسنجی ورودی‌ها.
-2. توکن‌های JWT
-ایجاد توکن‌های دسترسی (Access Token) برای احراز هویت کوتاه‌مدت.
-استفاده از توکن‌های رفرش (Refresh Token) برای ایجاد توکن‌های جدید بدون نیاز به لاگین مجدد.
-ذخیره‌سازی توکن‌های رفرش در پایگاه داده برای امنیت بیشتر.
-3. لیست بلاک توکن‌ها
-امکان بلاک کردن توکن‌های نامعتبر یا منقضی.
-مدیریت لیست بلاک با ذخیره‌سازی توکن‌های بلاک شده در پایگاه داده.
-4. مستندسازی API با Swagger
-ارائه مستندات تعاملی و کامل برای API با استفاده از Swagger.
-امکان تست API مستقیماً از طریق رابط کاربری Swagger.
-5. آزمایش API با RestSharp
-امکان تست و مصرف API با استفاده از کتابخانه RestSharp.
-نمونه کدهایی برای ارسال درخواست‌های HTTP و دریافت پاسخ‌ها.
-راه‌اندازی پروژه
-پیش‌نیازها
-.NET SDK (حداقل نسخه 6)
-SQL Server یا هر پایگاه داده مورد نظر
-Postman یا RestSharp برای تست API
-مراحل راه‌اندازی
-Clone پروژه:
-bash
-Copy
-1
-2
-git clone https://github.com/yourusername/MyAuthApi.git
-cd MyAuthApi
-نصب بسته‌های NuGet:
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+
+## **Project Overview**
+This project is a web API built using ASP.NET Core that includes all essential features for authentication, user management, token-based security, and API documentation. The key features of this project are:
+
+- **Authentication with ASP.NET Identity:** User and role management using the Identity Framework.
+- **JWT Tokens (JSON Web Tokens):** Generation of access tokens and refresh tokens for secure authentication.
+- **Refresh Token Management:** Secure storage and validation of refresh tokens in the database.
+- **Token Blacklist:** Ability to blacklist invalid or expired tokens.
+- **Login and Registration:** Secure user login and registration with strong input validation.
+- **API Documentation with Swagger:** Interactive and comprehensive API documentation using Swagger.
+- **API Testing with RestSharp:** Example usage of the RestSharp library for testing and consuming the API.
+
+---
+
+## **Key Features**
+
+### 1. **Authentication and User Management**
+- Utilizes ASP.NET Identity for user and role management, including password hashing.
+- Provides secure login and registration with input validation.
+
+### 2. **JWT Tokens**
+- Generates short-lived access tokens for authentication.
+- Uses refresh tokens to generate new access tokens without requiring re-login.
+- Stores refresh tokens securely in the database.
+
+### 3. **Token Blacklist**
+- Allows blacklisting invalid or expired tokens.
+- Manages blacklisted tokens by storing them in the database.
+
+### 4. **API Documentation with Swagger**
+- Provides interactive and detailed API documentation using Swagger.
+- Allows testing of API endpoints directly from the Swagger UI.
+
+### 5. **API Testing with RestSharp**
+- Demonstrates how to test and consume the API using the RestSharp library.
+- Includes example code snippets for sending HTTP requests and receiving responses.
+
+---
+
+## **Setup Instructions**
+
+### **Prerequisites**
+- [.NET SDK](https://dotnet.microsoft.com/download) (minimum version 6)
+- SQL Server or any preferred database
+- [Postman](https://www.postman.com/) or [RestSharp](https://restsharp.dev/) for API testing
+
+### **Steps to Run the Project**
+1. **Clone the Repository:**
+   ```bash
+   git clone https://github.com/yourusername/MyAuthApi.git
+   cd MyAuthApi
+Install NuGet Packages:
 bash
 Copy
 1
 dotnet restore
-تنظیمات پایگاه داده:
-فایل appsettings.json را باز کنید و اطلاعات اتصال به پایگاه داده خود را وارد کنید:
+Database Configuration:
+Open the appsettings.json file and update the database connection string:
 json
 Copy
 1
@@ -54,25 +68,25 @@ Copy
 "ConnectionStrings": {
   "DefaultConnection": "Server=YOUR_SERVER;Database=YOUR_DB;User Id=YOUR_USER;Password=YOUR_PASSWORD;"
 }
-اجرای Migration:
+Run Database Migrations:
 bash
 Copy
 1
 dotnet ef database update
-اجرای پروژه:
+Run the Project:
 bash
 Copy
 1
 dotnet run
-دسترسی به Swagger:
-پس از اجرای پروژه، مستندات API را می‌توانید در آدرس زیر مشاهده کنید:
+Access Swagger:
+After running the project, you can view the API documentation at:
 Copy
 1
 http://localhost:5000/swagger
 API Endpoints
-1. ثبت‌نام کاربر
+1. User Registration
 Endpoint: POST /api/auth/register
-ورودی:
+Request Body:
 json
 Copy
 1
@@ -86,10 +100,10 @@ Copy
   "email": "string",
   "password": "string"
 }
-خروجی: پیام موفقیت‌آمیز یا خطای اعتبارسنجی.
-2. لاگین کاربر
+Response: Success message or validation error.
+2. User Login
 Endpoint: POST /api/auth/login
-ورودی:
+Request Body:
 json
 Copy
 1
@@ -101,7 +115,7 @@ Copy
   "username": "string",
   "password": "string"
 }
-خروجی:
+Response:
 json
 Copy
 1
@@ -113,9 +127,9 @@ Copy
   "accessToken": "string",
   "refreshToken": "string"
 }
-3. دریافت توکن جدید با توکن رفرش
+3. Refresh Access Token
 Endpoint: POST /api/auth/refresh-token
-ورودی:
+Request Body:
 json
 Copy
 1
@@ -125,7 +139,7 @@ Copy
 {
   "refreshToken": "string"
 }
-خروجی:
+Response:
 json
 Copy
 1
@@ -137,9 +151,9 @@ Copy
   "accessToken": "string",
   "refreshToken": "string"
 }
-4. خروج کاربر (بلاک کردن توکن)
+4. Logout (Blacklist Token)
 Endpoint: POST /api/auth/logout
-ورودی:
+Request Body:
 json
 Copy
 1
@@ -149,9 +163,9 @@ Copy
 {
   "refreshToken": "string"
 }
-خروجی: پیام موفقیت‌آمیز یا خطای اعتبارسنجی.
-تست API با RestSharp
-برای تست API با RestSharp، می‌توانید از کد زیر استفاده کنید:
+Response: Success message or validation error.
+Testing the API with RestSharp
+You can test the API using RestSharp with the following example code:
 
 csharp
 Copy
@@ -167,14 +181,22 @@ request.AddJsonBody(new { username = "testuser", password = "testpass" });
 
 var response = client.Execute(request);
 Console.WriteLine(response.Content);
-لایسنس
-این پروژه تحت لایسنس MIT منتشر شده است. برای اطلاعات بیشتر، فایل LICENSE را مشاهده کنید.
+License
+This project is licensed under the MIT License. For more details, see the LICENSE file.
 
-مشارکت‌کنندگان
-نام شما
-تماس با ما
-برای ارتباط و ارسال بازخورد، می‌توانید از طریق ایمیل یا ایشو GitHub با ما در تماس باشید:
+Contributors
+Your Name
+Contact Us
+For questions, feedback, or collaboration, feel free to reach out via email or GitHub Issues:
 
-ایمیل: your.email@example.com
+Email: your.email@example.com
 GitHub Issues: Issues
-این توضیحات به صورت حرفه‌ای و ساختارمند طراحی شده‌اند تا بتوانید پروژه خود را به بهترین شکل معرفی کنید. اگر نیاز به تغییر یا اضافه کردن بخش‌های دیگر دارید، لطفاً اطلاع دهید! 🚀
+Copy
+1
+2
+3
+4
+
+---
+
+Once you’ve crea
